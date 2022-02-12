@@ -59,19 +59,13 @@ export default {
   },
   computed: {
     totalTodos(){
-      if(this.todos){
-        return this.todos.length;
-      }
+      return this.todos.length;
     },
     pendingTodos(){
-      if(this.todos){
-        return this.todos.filter(todo => !todo.status).length;
-      }
+      return this.todos.filter(todo => !todo.status).length;
     },
     doneTodos(){
-      if(this.todos){
-        return this.todos.filter(todo => todo.status).length;
-      }
+      return this.todos.filter(todo => todo.status).length;
     },
     filteredTodos(){
       if(this.selectedFilter == "all"){
@@ -94,7 +88,7 @@ export default {
           date: new Date().toString(),
           status: false,
         }
-        this.todos.push(todo);
+        this.todos.unshift(todo);
         this.newTodo = '';
         this.isError = false;
       }
