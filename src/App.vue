@@ -94,7 +94,7 @@ export default {
           date: new Date().toString(),
           status: false,
         }
-        this.todos.unshift(todo);
+        this.todos.push(todo);
         this.newTodo = '';
         this.isError = false;
       }
