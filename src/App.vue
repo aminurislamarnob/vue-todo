@@ -59,13 +59,19 @@ export default {
   },
   computed: {
     totalTodos(){
-      return this.todos.length;
+      if(this.todos){
+        return this.todos.length;
+      }
     },
     pendingTodos(){
-      return this.todos.filter(todo => !todo.status).length;
+      if(this.todos){
+        return this.todos.filter(todo => !todo.status).length;
+      }
     },
     doneTodos(){
-      return this.todos.filter(todo => todo.status).length;
+      if(this.todos){
+        return this.todos.filter(todo => todo.status).length;
+      }
     },
     filteredTodos(){
       if(this.selectedFilter == "all"){
