@@ -42,7 +42,7 @@ export default {
     }
   },
   mounted(){
-    this.todos = JSON.parse(localStorage.getItem("todos"));
+    this.todos = JSON.parse(localStorage.getItem("todos")) || [];
   },
   watch: {
     todos:{
